@@ -1,0 +1,19 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/*.crswap": true,
+        "build/": false,
+        ".github/": true,
+        ".devcontainer/": true,
+        ".gitignore": true,
+        "build-all.sh": true,
+        "build.sh": true,
+        "Justfile": true,
+        "LICENSE": true,
+    }
+}
