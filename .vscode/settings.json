@@ -15,5 +15,9 @@
         "build.sh": true,
         "Justfile": true,
         "LICENSE": true,
+    },
+    "files.associations": {
+        "cmath": "cpp",
+        "iostream": "cpp"
     }
 }
