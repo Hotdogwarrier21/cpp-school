@@ -8,6 +8,8 @@ int main(){
 
     int runs;
     cin >> runs;
+    string burn;
+    getline(cin, burn);
     for (int i = 0; i < runs; i++){
 
         
