@@ -18,15 +18,20 @@ vector<string> split(string s, string delim){
     return tokens;
 }
 
-int main(){
-
-    int runs;
-    cin >> runs;
-    string burn;
-    getline(cin, burn);
-    for (int i = 0; i < runs; i++){
-
-        
-
+vector<int> intSplit(string s, string delim){
+    vector<string> stringTokens = split(s,delim);
+    vector<int> tokens;
+    for (string num : stringTokens){
+        tokens.push_back(stoi(num));
     }
+    return tokens;
+}
+
+vector<float> floatSplit(string s, string delim){
+    vector<string> stringTokens = split(s,delim);
+    vector<float> tokens;
+    for (string num : stringTokens){
+        tokens.push_back(stof(num));
+    }
+    return tokens;
 }
