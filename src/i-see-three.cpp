@@ -44,7 +44,32 @@ int main(){
     getline(cin, burn); // removes the new line character from runs input
     for (int i = 0; i < runs; i++){
 
-        
+        string inLine;
+        getline(cin, inLine);
+        vector<int> inNum = intSplit(inLine, " ");
+        sort(inNum.begin(), inNum.end());
 
+        int pastNum = inNum[0];
+        int currentNum;
+        int count = 1;
+        string outBool = "FALSE";
+
+        for (int i = 1; i < inNum.size(); i++){
+
+            currentNum = inNum[i];
+            if (currentNum == pastNum){ // if the numbers are the same, increase count
+                count++;
+            } else { // if the numbers are different
+                if (count == 3){ // tripplet
+                    outBool = "TRUE";
+                    break;
+                } else { // not tripplet, reset vars
+                    count == 1;
+                }
+            }
+            pastNum == currentNum;
+        }        
+
+        cout << outBool << "\n";
     }
 }
