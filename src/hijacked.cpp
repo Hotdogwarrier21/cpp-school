@@ -42,7 +42,7 @@ int main(){
     cin >> runs;
     string burn;
     getline(cin, burn); // removes the new line character from runs input
-    for (int i = 0; i < runs; i++){
+    for (int run = 0; run < runs; run++){
         vector<string> foundMessage;
         vector<string> foundKeys;
         string chars;
@@ -59,29 +59,32 @@ int main(){
                 // cout << "looking at " << chars.substr(j, 3) << "\n";
                 // cout << (chars.substr(j, 3) == revKeyWord) << "\n";
                 if (chars.substr(j, 3) == revKeyWord){ // if we found the keyword
-                    foundMessage.push_back(chars.substr(i, j-i));
+                    foundMessage.push_back(chars.substr(i+3, j-(i+3)));
                     foundKeys.push_back(keyWord);
                     i+=3;
-                    cout << "found message: " << (chars.substr(i, j-i)) << "\n";
+                    //cout << "found message: " << (chars.substr(i, j-i)) << "\n";
                     break;
                     
                 }
 
             }
 
-            for (int i = 0; i < foundMessage.size(); i++){
-                for (int j = 0; j < foundMessage[i].length()-1; j++){
-                    // if the dupped char is in the key, remove one of them
-                    if (foundMessage[i][j] == foundMessage[i][j+1] && foundKeys[i].find(foundMessage[i][j]) != 1){ 
-                        foundMessage[i].erase(j, 1);
-                        cout << "removed a letter\n";
-                    }
-                }
-            }
-            cout << foundMessage.size() << endl;
         }
 
-        cout << foundMessage.size() << endl;
+        //cout << foundMessage.size() << "\n";
+
+        for (int j = 0; j < foundMessage.size(); j++){
+            //cout << j << " " << foundMessage.size() << "\n";
+            for (int k = 0; k < foundMessage[j].length()-1; k++){
+                // if the dupped char is in the key, remove one of them
+                if (foundMessage[j][k] == foundMessage[j][k+1] && foundKeys[j].find(foundMessage[j][k]) != 1){ 
+                    foundMessage[j].erase(k, 1);
+                    // cout << "removed a letter\n";
+                }
+            }
+            cout << foundMessage[j] << endl;
+            // cout << "j loop done \n";
+        }
 
     }
     
