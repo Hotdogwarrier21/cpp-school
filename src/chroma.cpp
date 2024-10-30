@@ -44,8 +44,16 @@ int main(){
     getline(cin, burn); // removes the new line character from runs input
     for (int i = 0; i < runs; i++){
 
-        int chromaR, chromaG, chromaB, objectR, objectG, objectB, backgroundR, backgroundG, backgroundB;
+        int chromaR, chromaG, chromaB, tollerance, objectR, objectG, objectB, backgroundR, backgroundG, backgroundB;
 
-        cin >> chromaR >> chromaG >> chromaB >> objectR >> objectG >> objectB >> backgroundR >> backgroundG >> backgroundB;
+        cin >> chromaR >> chromaG >> chromaB >> tollerance >> objectR >> objectG >> objectB >> backgroundR >> backgroundG >> backgroundB;
+
+        float fgDist = sqrt(((chromaR-objectR)*(chromaR-objectR))+((chromaG-objectG)*(chromaG-objectG))+((chromaB-objectB)*(chromaB-objectB)));
+
+        if (fgDist>tollerance){
+            cout << objectR << " " << objectG << " " << objectB << "\n";
+        } else {
+            cout << backgroundR << " " << backgroundG << " " << backgroundB << "\n";
+        }
     }
 }
