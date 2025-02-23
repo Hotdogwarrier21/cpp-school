@@ -43,6 +43,33 @@ int main(){
     string burn;
     getline(cin, burn); // removes the new line character from runs input
     for (int i = 0; i < runs; i++){
+        double health;
+        int numAttacks;
+        int turnCounter = 1;
+
+        cin >> health >> numAttacks;
+        vector<int> dmgs(numAttacks);
+        vector<int> times(numAttacks);
+        vector<double> DPT(numAttacks);
+        getline(cin, burn);
+        for (int j = 0; j < numAttacks; j++){
+            int dmg;
+            cin >> dmg;
+            dmgs[j] = dmg;
+            health -= dmg;
+            //cout << "got attack " << j << "\n";
+        }
+        getline(cin, burn);
+        for (int j = 0; j < numAttacks; j++){
+            int time;
+            cin >> time;
+            times[j] = time;
+            DPT[j] = dmgs[j]/double(times[j]);
+            //cout << "got time " << j << "\n";
+        }
+        getline(cin, burn);
+
         
+
     }
 }
