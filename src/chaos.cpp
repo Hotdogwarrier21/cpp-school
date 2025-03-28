@@ -38,17 +38,8 @@ vector<float> floatSplit(string s, string delim){
 
 int main(){
 
-    int runs;
-    cin >> runs;
+    int numNums;
+    cin >> numNums;
     string burn;
-    getline(cin, burn); // removes the new line character from runs input
-    for (int i = 0; i < runs; i++){
-        
-        int target, given;
-        cin >> target >> given;
-        getline(cin, burn);
-        int newGiven = given - (target%10);
-        cout << "Hotel Visit #" << (i+1) << ": Base " << (newGiven/int(target/10)) << "\n";
-        
-    }
+    getline(cin, burn);
 }
